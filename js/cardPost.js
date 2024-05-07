@@ -41,7 +41,7 @@ let createCard = (postArray) => {
     postMeta.classList.add('post-meta')
 
     let postAuthor = document.createElement('div')
-    postAuthor.classList.add('post-autor')
+    postAuthor.classList.add('post-author')
 
     let imgAvatar = document.createElement('img')
     imgAvatar.classList.add('avatar', 'radius-50')
