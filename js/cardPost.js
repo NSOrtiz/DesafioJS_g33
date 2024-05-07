@@ -31,9 +31,6 @@ let createCard =  (postArray) => {
     let postSection = document.createElement('div')
     postSection.classList.add('card', 'post-section')
 
-    
-
-
     let postContent = document.createElement('div')
     postContent.classList.add('post-content')
 
@@ -124,7 +121,7 @@ let createCard =  (postArray) => {
     countReact.classList.add('reactions-counter')
     
     
-    let countReactNumber = document.createTextNode(`${reactionsNumber}`)
+    let countReactNumber = document.createTextNode(`${reactionsNumber} `)
 
     
     let countSpan = document.createElement('span')
@@ -138,7 +135,7 @@ let createCard =  (postArray) => {
     
     
     let imgSvg= document.createElement('img')
-    imgSvg.setAttribute('src','./img/svg/icon-comment.svg')
+    imgSvg.setAttribute('src','../img/svg/icon-comment.svg')
     imgSvg.classList.add('icon')
     imgSvg.setAttribute('alt','comment')
     
@@ -163,14 +160,14 @@ let createCard =  (postArray) => {
     svg.classList.add('icon','icon-bookmark')
     svg.setAttribute('xmlns',"http://www.w3.org/2000/svg")
     svg.setAttribute('width','24')
-    svg.setAttribute('heigth','24')
+    svg.setAttribute('height','24')
     svg.setAttribute('aria-hidden','true')
     
     let path = document.createElement('path')
     path.setAttribute('d','M6.75 4.5h10.5a.75.75 0 01.75.75v14.357a.375.375 0 01-.575.318L12 16.523l-5.426 3.401A.375.375 0 016 19.607V5.25a.75.75 0 01.75-.75zM16.5 6h-9v11.574l4.5-2.82 4.5 2.82V6z')
     
-    svg.append(path)
-    save.append(svg)
+
+    
     postSection.append(postContent)
     postContent.append(postTitle,postIndention)
     postTitleInfo.append(containerName,containerDate)
@@ -194,7 +191,8 @@ let createCard =  (postArray) => {
     spanRuby.append(spanNone)
     spanNone.append(spanNoneTexto)
     cardComents.append(imgSvg,spanRuby)
-
+    svg.append(path)
+    save.append(svg)
 
 
 
