@@ -99,45 +99,9 @@ let createCard = (postArray) => {
     let imgIcons = document.createElement('img');
     imgIcons.setAttribute('src', 'https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg');
     imgIcons.setAttribute('width', '24');
-    imgIcons.setAttribute('height', '24');
-
-    let spanIcons1 = document.createElement('span');
-    spanIcons1.classList.add('reaction-icon');
-
-    let imgIcons1 = document.createElement('img');
-    imgIcons1.setAttribute('src', 'https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg');
-    imgIcons1.setAttribute('width', '24');
-    imgIcons1.setAttribute('height', '24');
-
-    let spanIcons2 = document.createElement('span');
-    spanIcons2.classList.add('reaction-icon');
-
-    let imgIcons2 = document.createElement('img');
-    imgIcons2.setAttribute('src', 'https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg');
-    imgIcons2.setAttribute('width', '24');
-    imgIcons2.setAttribute('height', '24');
-
-    let spanIcons3 = document.createElement('span');
-    spanIcons3.classList.add('reaction-icon');
-
-    let imgIcons3 = document.createElement('img');
-    imgIcons3.setAttribute('src', 'https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg');
-    imgIcons3.setAttribute('width', '24');
-    imgIcons3.setAttribute('height', '24');
-
-    let spanIcons4 = document.createElement('span');
-    spanIcons4.classList.add('reaction-icon');
-
-    let imgIcons4 = document.createElement('img');
-    imgIcons4.setAttribute('src', 'https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg');
-    imgIcons4.setAttribute('width', '24');
-    imgIcons4.setAttribute('height', '24');
+    imgIcons.setAttribute('heigth', '24');
 
     spanIcons.append(imgIcons);
-    spanIcons1.append(imgIcons1);
-    spanIcons2.append(imgIcons2);
-    spanIcons3.append(imgIcons3);
-    spanIcons4.append(imgIcons4);
 
     let countReact = document.createElement('div');
     countReact.classList.add('reactions-counter');
@@ -194,7 +158,7 @@ let createCard = (postArray) => {
     containerName.append(textName);
     countSpan.append(countSpanText);
     countReact.append(countReactNumber, countSpan);
-    cardIcons.append(spanIcons, spanIcons1, spanIcons2, spanIcons3, spanIcons4);
+    cardIcons.append(spanIcons);
     cardReactions.append(cardIcons, countReact);
     save.append(saveText);
     cardComents.append(imgSvg, spanRuby);
