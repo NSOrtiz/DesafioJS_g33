@@ -14,13 +14,13 @@ let key = params.get('key')
 
 const printPostData = async (postKey)=>{
     let postData = await getData(postKey)
-    let {imgPost,img,name,date,title,tags,text} =postData
+    let {imgPost,img,name,date,title,tags,text,avatar} = postData
     console.log(postData)
     let imgagePost = document.getElementById('imgPost')
-    imgagePost.setAttribute('src',imgPost)
+    imgagePost.setAttribute('src',img)
 
     let imagePerson = document.getElementById('img')
-    imagePerson.setAttribute('src',img)
+    imagePerson.setAttribute('src',avatar)
     imagePerson.setAttribute('alt',name)
 
     document.getElementById('name').innerText=name
@@ -52,9 +52,9 @@ const printPostData = async (postKey)=>{
 
 const printAside = async(postKey)=>{
     let postData = await getData(postKey)
-    let {img,name,descrip} =postData
+    let {avatar,name,descrip} =postData
     let imgageAvatar = document.getElementById('imgAuthor')
-    imgageAvatar.setAttribute('src',img)
+    imgageAvatar.setAttribute('src',avatar)
     document.getElementById('spanName').innerText=name
     document.getElementById('descrip').innerText=descrip
 
@@ -63,3 +63,4 @@ const printAside = async(postKey)=>{
 
 printPostData(key)
 printAside(key)
+

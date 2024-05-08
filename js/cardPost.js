@@ -1,11 +1,3 @@
-/*
-let randomTag = (lista) => {
-    item = Math.floor(Math.random() * (lista.length))
-    return lista[item]
-}
-let tags = ['csharp', 'dotnet', 'programming', 'tools', 'beginers', 'react', 'java', 'tutorial', 'python', 'php', 'javascript', 'webdev', 'ruby', 'rails', 'design']
-let tag = randomTag(tags)
-*/
 const getData = async () => {
     let response = await fetch('https://reto-js-bd894-default-rtdb.firebaseio.com/.json')
 
@@ -79,7 +71,7 @@ let createCard = (postArray) => {
     let postTitleIndention = document.createElement('div');
     postTitleIndention.classList.add('title');
     postTitleIndention.addEventListener('click',(event)=>{
-        window.open(`../views/detalleCard.html?key=${key}`,'self')
+        window.open(`../views/detalleCard.html?key=${key}`,'_self')
     })
 
     let textIndention = document.createTextNode(title);
@@ -230,3 +222,16 @@ const printCardsAsync = async () => {
 }
 
 printCardsAsync();
+
+
+/*
+Esto es para pintar la primera card
+let firstCard = document.getElementById('firstCard')
+firstCard.addEventListener('click',(event)=>{
+    let keyso = firstCard.getAttribute('name')
+    return keyso
+})
+
+*/
+
+
