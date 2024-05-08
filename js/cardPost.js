@@ -21,7 +21,7 @@ const getData = async () => {
 }
 
 let createCard = (postArray) => {
-    let { name, avatar, date, title, reactionsNumber, timeAgo, tags } = postArray;
+    let { name, avatar, date, title, reactionsNumber, timeAgo, tags, comments } = postArray;
 
     let postSection = document.createElement('div');
     postSection.classList.add('card', 'post-section');
@@ -149,6 +149,7 @@ let createCard = (postArray) => {
 
     let countSpanText = document.createTextNode('reactions');
 
+    //comentarios
     let cardComents = document.createElement('div');
     cardComents.classList.add('card', 'comments');
 
@@ -156,6 +157,9 @@ let createCard = (postArray) => {
     imgSvg.setAttribute('src', '../img/svg/icon-comment.svg');
     imgSvg.classList.add('icon');
     imgSvg.setAttribute('alt', 'comment');
+
+    let numeroComentarios = document.createTextNode(`${comments} comments`)
+
 
     let spanRuby = document.createElement('span');
     spanRuby.classList.add('d-ruby');
@@ -200,6 +204,7 @@ let createCard = (postArray) => {
     cardComents.append(imgSvg, spanRuby);
     svg.append(path);
     save.append(svg);
+    cardComents.append(numeroComentarios);
 
     return postSection;
 }
