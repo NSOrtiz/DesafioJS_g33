@@ -21,7 +21,7 @@ const getData = async () => {
 }
 
 let createCard = (postArray) => {
-    let { name, avatar, date, title, reactionsNumber, timeAgo, tags, comments } = postArray;
+    let { name, avatar, date, title, reactions, timeAgo, tags, comments,key } = postArray;
 
     let postSection = document.createElement('div');
     postSection.classList.add('card', 'post-section');
@@ -78,6 +78,9 @@ let createCard = (postArray) => {
 
     let postTitleIndention = document.createElement('div');
     postTitleIndention.classList.add('title');
+    postTitleIndention.addEventListener('click',(event)=>{
+        window.open(`../views/detalleCard.html?key=${key}`,'self')
+    })
 
     let textIndention = document.createTextNode(title);
 
@@ -142,7 +145,7 @@ let createCard = (postArray) => {
     let countReact = document.createElement('div');
     countReact.classList.add('reactions-counter');
 
-    let countReactNumber = document.createTextNode(`${reactionsNumber} `);
+    let countReactNumber = document.createTextNode(`${reactions} `);
 
     let countSpan = document.createElement('span');
     countSpan.classList.add('d-none', 'd-sm-contents');
@@ -168,6 +171,7 @@ let createCard = (postArray) => {
     spanNone.classList.add('d-none', 'd-sm-contents');
 
     let spanNoneTexto = document.createTextNode('Add Comment');
+    spanNone.append(spanNoneTexto)
 
     let save = document.createElement('div');
     save.classList.add('save');
