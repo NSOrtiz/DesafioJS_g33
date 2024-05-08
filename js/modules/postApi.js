@@ -1,6 +1,6 @@
 const sendPost = async (postObject) =>{
     let sendData = await fetch(
-        "https://postform-4f43d-default-rtdb.firebaseio.com/Post/.json",
+        "https://reto-js-bd894-default-rtdb.firebaseio.com/.json",
     {
         method: "POST",
         body: JSON.stringify(postObject),
@@ -11,4 +11,4 @@ const sendPost = async (postObject) =>{
 }
 
 
-export { sendPost}
+export {sendPost}

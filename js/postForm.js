@@ -22,7 +22,7 @@ const updateLabels = () =>{
             inputText.style.display = 'none';
             labelContainer.removeChild(labelContainer.lastChild);
         } else {
-            inputText.style.display = 'inline-block'; // Asegurarse de que el input esté visible si se eliminan etiquetas
+            inputText.style.display = 'inline-block'; 
         }
     });
 }
@@ -30,7 +30,6 @@ updateLabels()
 
 
 let infoPostArray = []
-//creacion de array de objeetos perro
 const createNewPostsArray = () => {
     let fields = document.querySelectorAll("#form-data input")
     let infoPost = {}
@@ -49,17 +48,10 @@ saveBtn.addEventListener("click", (event)=>{
   event.preventDefault() 
   let newPosts = createNewPostsArray()
   sendPost(newPosts)
-  console.log(newPosts)
-
   window.open('../index.html','_self')
 })
 
-
-
-
-
 let closeBtn = document.getElementById("btn-close") 
-
 
 closeBtn.addEventListener("click", async(event)=>{
   event.preventDefault() 
