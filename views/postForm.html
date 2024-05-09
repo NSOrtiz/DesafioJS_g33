@@ -53,7 +53,7 @@
             <div class="col-sm-12 offset-md-1 col-md-8 card-form-top">
                 <div class="row p-0 mx-4">
                     <input class="col-3 input-tags my-4" type="text" placeholder="Photo" name="img">
-                    <input class="title-form" type="text" placeholder="New post title here..." name="title" >
+                    <input class="title-form" type="text" placeholder="New post title here..." name="title" id="idTitle" >
                     <div class="row d-flex justify-content-start">
                         <div id="labelContainer">
                         </div>
@@ -61,9 +61,9 @@
                     </div>
                     <div class="reaccions my-4">
                         <label class="col-2"> <b>Reaccions:</b> </label>
-                        <input class="input-tags col-4" type="number" placeholder="reaction number" name="reactions" >
+                        <input class="input-tags col-4" type="number" min="1" placeholder="reaction number" name="reactions" >
                         <label class="col-2"> <b>Rating:</b> </label>
-                        <input class="input-tags col-3" type="number" placeholder="rating number" name="rating" >
+                        <input class="input-tags col-3" type="number" min="1" max="10" placeholder="rating number" name="rating" >
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
                 </div>   
             </div>
             <div class="col-12 offset-md-1 col-md-8 card-form-bot form-floating ">
-                <input class="parrafo-form py-4 mx-4" placeholder="Write your post content here..." name="text">
+                <input class="parrafo-form py-4 mx-4" placeholder="Write your post content here..." name="text" id="idParrafo">
                 <div class="col d-flex justify-content-between my-2 mx-4 gap-3" >
                     <input class="col-3 input-tags" type="text" placeholder="Avatar-photo" name="avatar">
                     <input class="col-3 input-tags" type="text" placeholder="Autor" name="name">

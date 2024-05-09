@@ -24,7 +24,10 @@ const updateLabels = () =>{
         } else {
             inputText.style.display = 'inline-block'; 
         }
+        
     });
+
+    
 }
 updateLabels()
 

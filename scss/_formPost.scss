@@ -87,8 +87,10 @@
   margin-bottom: 5px;
   color: rgb(140, 141, 141);
   outline:none;
+  resize: vertical;
   &:hover {
     color: black;
+    resize: vertical;
   }
 }
 .input-tags{
@@ -131,8 +133,10 @@
   text-align: start;
   outline:none;
   color: rgb(140, 141, 141);
+  resize: vertical;
   &:hover {
     color: black;
+    resize: vertical;
   }
 }
 
