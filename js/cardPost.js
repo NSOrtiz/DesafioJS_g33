@@ -229,7 +229,7 @@ function modificarHTML() {
     let loginContainer = document.querySelector("#authentication-top-nav-actions");
 
     let createPostLink = document.createElement("a");
-    createPostLink.setAttribute("href", "./create_post.html"); 
+    createPostLink.setAttribute("href", "../views/postForm.html"); 
     createPostLink.classList.add("my-auto", "create-account"); 
     createPostLink.textContent = "Create post"; 
 
