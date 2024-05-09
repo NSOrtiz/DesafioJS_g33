@@ -223,6 +223,25 @@ const printCardsAsync = async () => {
 
 printCardsAsync();
 
+let token = localStorage.getItem("token");
+
+function modificarHTML() {
+    let loginContainer = document.querySelector("#authentication-top-nav-actions");
+
+    let createPostLink = document.createElement("a");
+    createPostLink.setAttribute("href", "./create_post.html"); 
+    createPostLink.classList.add("my-auto", "create-account"); 
+    createPostLink.textContent = "Create post"; 
+
+    loginContainer.innerHTML = "";
+
+    loginContainer.appendChild(createPostLink);
+}
+
+if (token) {
+    modificarHTML();
+}
+
 
 /*
 Esto es para pintar la primera card

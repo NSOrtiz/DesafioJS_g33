@@ -20,3 +20,4 @@ loginbtn.addEventListener("click", () => {
     localStorage.setItem("token", token);
   window.open("../index.html", "_self");
 });
+

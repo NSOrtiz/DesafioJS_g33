@@ -64,3 +64,30 @@ const printAside = async(postKey)=>{
 printPostData(key)
 printAside(key)
 
+let token = localStorage.getItem("token");
+
+function modificarHTML() {
+    let loginContainer = document.querySelector("#authentication-top-nav-actions");
+
+    // Eliminar todos los hijos del contenedor
+    while (loginContainer.firstChild) {
+        loginContainer.removeChild(loginContainer.firstChild);
+    }
+
+    let createPostLink = document.createElement("a");
+    createPostLink.setAttribute("href", "./create_post.html"); 
+    createPostLink.classList.add("my-auto", "create-account"); 
+    createPostLink.textContent = "Create post"; 
+
+    // Agregar el nuevo botón "Create post"
+    loginContainer.appendChild(createPostLink);
+}
+
+
+if (token) {
+    modificarHTML();
+}
+
+
+
+
