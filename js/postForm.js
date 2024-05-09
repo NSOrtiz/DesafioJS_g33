@@ -31,7 +31,6 @@ const updateLabels = () =>{
 }
 updateLabels()
 
-
 let infoPostArray = []
 const createNewPostsArray = () => {
     let fields = document.querySelectorAll("#form-data input")
@@ -49,7 +48,7 @@ let saveBtn = document.getElementById("publishBtn")
 
 saveBtn.addEventListener("click", (event)=>{
   event.preventDefault() 
-  let newPosts = createNewPostsArray()
+  let newPosts = createNewPgitostsArray()
   sendPost(newPosts)
   window.open('../index.html','_self')
 })
@@ -60,3 +59,4 @@ closeBtn.addEventListener("click", async(event)=>{
   event.preventDefault() 
   window.open('../index.html','_self')
 })
+
