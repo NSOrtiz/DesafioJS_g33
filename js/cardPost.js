@@ -13,7 +13,7 @@ const getData = async () => {
 }
 
 let createCard = (postArray) => {
-    let { name, avatar, date, title, reactions, timeAgo, tags, comments,key } = postArray;
+    let { name, avatar, date, title, reactions, timeAgo, tags, comments, key } = postArray;
 
     let postSection = document.createElement('div');
     postSection.classList.add('card', 'post-section');
@@ -70,8 +70,8 @@ let createCard = (postArray) => {
 
     let postTitleIndention = document.createElement('div');
     postTitleIndention.classList.add('title');
-    postTitleIndention.addEventListener('click',(event)=>{
-        window.open(`../views/detalleCard.html?key=${key}`,'_self')
+    postTitleIndention.addEventListener('click', (event) => {
+        window.open(`../views/detalleCard.html?key=${key}`, '_self')
     })
 
     let textIndention = document.createTextNode(title);
@@ -207,11 +207,22 @@ let createCard = (postArray) => {
 
 let printCards = async (postArray, wrapperId) => {
     let wrapper = document.getElementById(wrapperId);
-    //Esto me elimina los elementos anteriores para dar paso a los nuevos
     wrapper.innerHTML = '';
-    postArray.forEach((post) => {
+    postArray.forEach((post, index) => {
         let postItem = createCard(post);
         wrapper.append(postItem);
+       
+        if (index !== 0) {
+            let space = document.createElement('div');
+            space.style.height = '';
+            wrapper.appendChild(space.cloneNode(true));
+        }
+        wrapper.appendChild(postItem);
+        // Agregar espacio vertical abajo si no es la última tarjeta
+        if (index < postArray.length - 1) {
+            let space = document.createElement('div');
+            space.style.height = '1rem'; // 1 rem de espacio
+        }
     });
 }
 
@@ -220,8 +231,21 @@ const printCardsAsync = async () => {
     printCards(postArray, 'wrapper');
     console.log(postArray);
 }
-
 printCardsAsync();
+
+let filterInput = document.getElementById("category-filter");
+
+filterInput.addEventListener("input", async (event) => {
+    let query = event.target.value.toLowerCase().trim();
+
+    let postArray = await getData();
+
+    let filteredPosts = postArray.filter((post) =>
+        post.title.toLowerCase().startsWith(query)
+    );
+
+    printCards(filteredPosts, 'wrapper');
+});
 
 let token = localStorage.getItem("token");
 
@@ -241,6 +265,7 @@ function modificarHTML() {
 if (token) {
     modificarHTML();
 }
+
 
 
 /*
